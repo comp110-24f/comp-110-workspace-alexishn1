@@ -5,9 +5,15 @@ __author__ = "730641729"
 
 def main_planner(guests: int) -> None:
     """Bring functions together"""
-    print("A Cozy Tea Party for " + str(guests) + " People!")
-    print("Tea Bags: " + str(tea_bags(people=guests)))
-    print("Treats: " + str(treats(people=guests)))
+    print(
+        "A Cozy Tea Party for " + str(guests) + " People!"
+    )  # Guests needs to be converted to str (str+str)
+    print(
+        "Tea Bags: " + str(tea_bags(people=guests))
+    )  # Tea bag count needs to be converted to str
+    print(
+        "Treats: " + str(treats(people=guests))
+    )  # Treat count needs to be converted to string
     print(
         "Cost: $"
         + str(
@@ -20,17 +26,21 @@ def main_planner(guests: int) -> None:
 
 def tea_bags(people: int) -> int:
     """Calculate amount of tea bags"""
-    return 2 * people  # 2 tea bags per person
+    return 2 * people  # Return 2 tea bags per person
 
 
 def treats(people: int) -> int:
     """Calculate amount of treats based on the number of tea bags"""
-    return int(tea_bags(people=people) * 1.5)
+    return int(
+        tea_bags(people=people) * 1.5
+    )  # Call tea bag function because people want 1.5 treats per each tea
 
 
 def cost(tea_count: int, treat_count: int) -> float:
     """Calculate cost of tea bags and treats"""
-    return tea_count * 0.50 + treat_count * 0.75
+    return (
+        tea_count * 0.50 + treat_count * 0.75
+    )  # Total cost is tea and treat count times price added together
 
 
 if __name__ == "__main__":
